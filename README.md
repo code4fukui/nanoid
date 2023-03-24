@@ -148,7 +148,7 @@ For quick hacks, you can load Nano ID from CDN. Though, it is not recommended
 to be used in production because of the lower loading performance.
 
 ```js
-import { nanoid } from 'https://cdn.jsdelivr.net/npm/nanoid/nanoid.js'
+import { nanoid } from 'https://code4fukui.github.io/nanoid/nanoid.js'
 ```
 
 Nano ID provides ES modules. You do not need to do anything to use Nano ID
