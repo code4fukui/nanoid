@@ -1,5 +1,7 @@
 # Nano ID
 
+> 日本語のREADMEはこちらです: [README.ja.md](README.ja.md)
+
 <img src="https://ai.github.io/nanoid/logo.svg" align="right"
      alt="Nano ID logo by Anton Lovchikov" width="180" height="94">
 
@@ -55,7 +57,6 @@ Supports modern browsers, IE [with Babel], Node.js and React Native.
   * [Other Programming Languages](#other-programming-languages)
 * [Tools](#tools)
 
-
 ## Comparison with UUID
 
 Nano ID is quite comparable to UUID v4 (random-based).
@@ -71,7 +72,6 @@ There are two main differences between Nano ID and UUID v4:
    are packed in just 21 symbols instead of 36.
 2. Nano ID code is **4 times smaller** than `uuid/v4` package:
    130 bytes instead of 423.
-
 
 ## Benchmark
 
@@ -102,7 +102,6 @@ rndm                       2,718,063 ops/sec
 
 Test configuration: ThinkPad X1 Carbon Gen 9, Fedora 36, Node.js 18.9.
 
-
 ## Security
 
 *See a good article about random generators theory:
@@ -129,7 +128,6 @@ Test configuration: ThinkPad X1 Carbon Gen 9, Fedora 36, Node.js 18.9.
 [Secure random values (in Node.js)]: https://gist.github.com/joepie91/7105003c3b26e65efcea63f3db82dfba
 [better algorithm]:                  https://github.com/ai/nanoid/blob/main/index.js
 [the source]:                        https://github.com/ai/nanoid/blob/main/index.js
-
 
 ## Install
 
@@ -158,14 +156,12 @@ as ESM in webpack, Rollup, Parcel, or Node.js.
 import { nanoid } from 'nanoid'
 ```
 
-
 ## API
 
 Nano ID has 3 APIs: normal (blocking), asynchronous, and non-secure.
 
 By default, Nano ID uses URL-friendly symbols (`A-Za-z0-9_-`) and returns an ID
 with 21 characters (to have a collision probability similar to UUID v4).
-
 
 ### Blocking
 
@@ -193,7 +189,6 @@ You can also use a [custom alphabet](#custom-alphabet-or-size)
 or a [random generator](#custom-random-bytes-generator).
 
 [ID collision probability]: https://zelark.github.io/nano-id-cc/
-
 
 ### Async
 
@@ -224,7 +219,6 @@ in the next part of the documentation.
 
 [`crypto.randomBytes`]: https://nodejs.org/api/crypto.html#crypto_crypto_randombytes_size_callback
 
-
 ### Non-Secure
 
 By default, Nano ID uses hardware random bytes generation for security
@@ -235,7 +229,6 @@ you can use the faster non-secure generator.
 import { nanoid } from 'nanoid/non-secure'
 const id = nanoid() //=> "Uakgb_J5m9g-0JDMbcJqLJ"
 ```
-
 
 ### Custom Alphabet or Size
 
@@ -281,7 +274,6 @@ model.id = nanoid(5) //=> "f01a2"
 [ID collision probability]: https://alex7kom.github.io/nano-nanoid-cc/
 [`nanoid-dictionary`]:      https://github.com/CyberAP/nanoid-dictionary
 
-
 ### Custom Random Bytes Generator
 
 `customRandom` allows you to create a `nanoid` and replace alphabet
@@ -316,7 +308,6 @@ Asynchronous and non-secure APIs are not available for `customRandom`.
 Note, that between Nano ID versions we may change random generator
 call sequence. If you are using seed-based generators, we do not guarantee
 the same result.
-
 
 ## Usage
 
@@ -367,7 +358,6 @@ That hook was added in React 18.
 
 [`useId`]: https://reactjs.org/docs/hooks-reference.html#useid
 
-
 ### React Native
 
 React Native does not have built-in random generator. The following polyfill
@@ -383,7 +373,6 @@ import { nanoid } from 'nanoid'
 
 [`react-native-get-random-values`]: https://github.com/LinusU/react-native-get-random-values
 
-
 ### PouchDB and CouchDB
 
 In PouchDB and CouchDB, IDs can’t start with an underscore `_`.
@@ -398,7 +387,6 @@ db.put({
   …
 })
 ```
-
 
 ### Web Workers
 
@@ -416,7 +404,6 @@ nanoid() //=> "Uakgb_J5m9g-0JDMbcJqLJ"
 
 Note: non-secure IDs are more prone to collision attacks.
 
-
 ### Jest
 
 Jest test runner with `jest-environment-jsdom` will use browser’s version
@@ -431,7 +418,6 @@ window.crypto = {
   }
 }
 ```
-
 
 ### CLI
 
@@ -496,7 +482,6 @@ the same ID generator on the client and server side.
 For other environments, [CLI] is available to generate IDs from a command line.
 
 [CLI]: #cli
-
 
 ## Tools
 
